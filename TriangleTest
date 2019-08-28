@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Enter the value of the 1st side");
+		double a = userInput.nextDouble();
+		System.out.println("Enter the value of the 2nd side");
+		double b = userInput.nextDouble();
+		System.out.println("Enter the value of the 3rd side");
+		double c = userInput.nextDouble();
+		double d;
+		double g;
+		double f;
+		if (b < a) {
+			 d = b;
+			 b = a;
+			 a = d;
+		}if (c < a) {
+			f = c;
+			c = a;
+			a = f;
+		}if (c < b) {
+			g = c;
+			c = b;
+			b = g;
+		System.out.println("a = "+ a + " b = " + b + " c = " + c);
+		}if (a + b > c) {
+			System.out.println("This is a valid triangle");
+			if ((a*a) + (b*b) == (c*c)) {
+				System.out.println("This is a right triangle");
+			}
+			if ((a*a) + (b*b) > (c*c)) {
+				System.out.println("This is an acute triangle");
+					}
+			if ((a*a) + (b*b) < (c*c)) {
+				System.out.println("This is an obtuse traingle");
+					}
+				}else {
+					System.out.println("This is not a valid triangle");
+		}
+	userInput.close();
+	}
+}
+
+	
+
+
+
