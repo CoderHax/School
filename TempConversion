@@ -1,0 +1,46 @@
+import java.util.Scanner;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		Scanner userInput = new Scanner(System.in);
+		boolean CtoF = false;
+		
+		System.out.println("Enter 1 to convert Celsius to Fahrenheit. Enter 2 to convert from Fahrenheit to Celsius");
+		int userChoice = userInput.nextInt();
+		
+		if (userChoice == 1) {
+			CtoF = true;
+		} else {
+			CtoF = false;
+		}
+		double f;
+		double c;
+		if (CtoF == true) {
+			System.out.println("Enter the Celsius value");
+			double celsiusValue = userInput.nextDouble();
+			if (celsiusValue <= -273.15) {
+			System.out.println("You entered a temperature that is at or below absolute zero. A conversion would not be scientifically valid");
+			} else {
+				f = (celsiusValue * 1.8) + 32;
+				System.out.println(celsiusValue + "C is equal to " + f + "F");
+			}
+		} else {
+			System.out.println("Enter Fahrenheit value");
+			double fahrenheitValue = userInput.nextDouble();		
+			if (fahrenheitValue <= -459.67) {
+				System.out.println("You entered a temperature that is at or below absolute zero. A conversion would not be scientifically valid");
+				} else {
+					c = (fahrenheitValue - 32) * 0.56;
+					System.out.println(fahrenheitValue + "F is equal to " + c + "C");
+				}
+		}
+		
+		
+		
+		userInput.close();
+	}
+}
+
+
