@@ -1,0 +1,10 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class ClientRunner {
+
+	public static void main(String[] args) throws IOException{
+	Scanner read = new Scanner(new File("HyruleTempF"));
+	PrintWriter write = new PrintWriter(new File("HyruleTempC"));
+	}
+}
