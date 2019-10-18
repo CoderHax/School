@@ -6,5 +6,23 @@ public class ClientRunner {
 	public static void main(String[] args) throws IOException{
 	Scanner read = new Scanner(new File("HyruleTempF"));
 	PrintWriter write = new PrintWriter(new File("HyruleTempC"));
-	}
+	double F,C;
+	int roundC, count = 0;
+	while(read.hasNext()) {
+	  F = read.nextDouble();   
+	  C = ((F-32)/1.8);
+	  C *= 10;
+	  if(C>0) {C+=0.5;}
+	  else {C-=0.5;}
+	  roundC = (int)C;
+	  C = (double)roundC/10;
+	  write.print(C + " ");
+	  count ++;
+	  if(count % 15 == 0) {
+		  write.print("\n");
+	   }
+	write.close();
+     }
+	
+   }
 }
